@@ -35,8 +35,12 @@ class ViewController: UIViewController {
                                       timeRange: CMTimeRange(start: CMTime.zero, end: CMTimeMake(value: duration, timescale: 1)) )
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.frame = CGRect(x: 60, y: 220, width: 300, height: 300)
+        playerLayer.masksToBounds = true
+        playerLayer.cornerRadius = 10
         view.layer.insertSublayer(playerLayer, at: 1)
+        
         player.play()
+        player.isMuted = true
     }
 
     let header: UILabel = {
