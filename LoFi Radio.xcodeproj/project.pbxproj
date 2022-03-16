@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7DE8BA674A92CB699716E3 /* Pods_LoFi_Radio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D659BB5FADAFF631BDA6E5 /* Pods_LoFi_Radio.framework */; };
 		3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */; };
 		3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */; };
 		34F8385B27E12E2D00480BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385A27E12E2D00480BE2 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24D659BB5FADAFF631BDA6E5 /* Pods_LoFi_Radio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoFi_Radio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chrome Syrup.ttf"; sourceTree = "<group>"; };
 		3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlDay.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +32,8 @@
 		34F8386627E12E2F00480BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F8386827E12E2F00480BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34F8386E27E1307800480BE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5B90D8D6395C240AA2016F6E /* Pods-LoFi Radio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoFi Radio.debug.xcconfig"; path = "Target Support Files/Pods-LoFi Radio/Pods-LoFi Radio.debug.xcconfig"; sourceTree = "<group>"; };
+		E995F6C2518F4EA217BD18CD /* Pods-LoFi Radio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoFi Radio.release.xcconfig"; path = "Target Support Files/Pods-LoFi Radio/Pods-LoFi Radio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7DE8BA674A92CB699716E3 /* Pods_LoFi_Radio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CA3470C7E68E982C326B6E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24D659BB5FADAFF631BDA6E5 /* Pods_LoFi_Radio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34F8384E27E12E2D00480BE2 = {
 			isa = PBXGroup;
 			children = (
@@ -50,6 +63,8 @@
 				3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */,
 				34F8385927E12E2D00480BE2 /* LoFi Radio */,
 				34F8385827E12E2D00480BE2 /* Products */,
+				A4EAC35B7F14E20C2FBD9961 /* Pods */,
+				0CA3470C7E68E982C326B6E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +91,16 @@
 			path = "LoFi Radio";
 			sourceTree = "<group>";
 		};
+		A4EAC35B7F14E20C2FBD9961 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B90D8D6395C240AA2016F6E /* Pods-LoFi Radio.debug.xcconfig */,
+				E995F6C2518F4EA217BD18CD /* Pods-LoFi Radio.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34F8386B27E12E2F00480BE2 /* Build configuration list for PBXNativeTarget "LoFi Radio" */;
 			buildPhases = (
+				DEBED8264740E24D981A90E5 /* [CP] Check Pods Manifest.lock */,
 				34F8385327E12E2D00480BE2 /* Sources */,
 				34F8385427E12E2D00480BE2 /* Frameworks */,
 				34F8385527E12E2D00480BE2 /* Resources */,
+				3239AB767A56380C707CE6E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3239AB767A56380C707CE6E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoFi Radio/Pods-LoFi Radio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoFi Radio/Pods-LoFi Radio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoFi Radio/Pods-LoFi Radio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEBED8264740E24D981A90E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoFi Radio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34F8385327E12E2D00480BE2 /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		34F8386C27E12E2F00480BE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B90D8D6395C240AA2016F6E /* Pods-LoFi Radio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,6 +394,7 @@
 		};
 		34F8386D27E12E2F00480BE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E995F6C2518F4EA217BD18CD /* Pods-LoFi Radio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

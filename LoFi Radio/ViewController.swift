@@ -7,8 +7,9 @@
 
 import UIKit
 import AVFoundation
+import youtube_ios_player_helper
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, YTPlayerViewDelegate {
     
     private var player: AVQueuePlayer!
     private var playerLayer: AVPlayerLayer!
@@ -22,6 +23,10 @@ class ViewController: UIViewController {
         
         setupVideoPlayer()
         playPause()
+        let playerView = YTPlayerView()
+        playerView.delegate = self
+        playerView.load(withVideoId: "5qap5aO4i9A")
+        view.addSubview(playerView)
     }
     
     let header: UILabel = {
@@ -72,5 +77,8 @@ class ViewController: UIViewController {
         self.view.addSubview(button)
     }
     
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        playerView.playVideo()
+    }
 
 }
