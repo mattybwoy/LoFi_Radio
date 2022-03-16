@@ -19,9 +19,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
         view.addSubview(header)
-        setupVideoPlayer()
         
+        setupVideoPlayer()
+        playPause()
     }
+    
+    let header: UILabel = {
+        var label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        label.center = CGPoint(x: 210, y: 140)
+        label.textAlignment = .center
+        label.font = UIFont(name: "Chrome Syrup", size: 70)
+        label.textColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+        label.text = "Lofi Radio"
+        return label
+    }()
     
     func setupVideoPlayer() {
         let path = Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4")
@@ -42,17 +53,24 @@ class ViewController: UIViewController {
         player.play()
         player.isMuted = true
     }
-
-    let header: UILabel = {
-        var label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        label.center = CGPoint(x: 210, y: 140)
-        label.textAlignment = .center
-        label.font = UIFont(name: "Chrome Syrup", size: 70)
-        label.textColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
-        label.text = "Lofi Radio"
-        return label
-    }()
     
+    func playPause() {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
+        button.center = CGPoint(x: 210, y: 630)
+        button.titleLabel?.center = CGPoint(x: 0, y: 0)
+        button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 40)
+        button.setTitle("Play", for: .normal)
+        button.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor
+        button.contentVerticalAlignment = .fill
+        //button.contentHorizontalAlignment = .fill
+        button.contentMode = .center
+        button.imageView?.contentMode = .scaleAspectFit
+        button.layer.cornerRadius = button.frame.size.width / 2
+        button.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+        self.view.addSubview(button)
+    }
     
 
 }
