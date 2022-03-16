@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */; };
+		3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */; };
 		34F8385B27E12E2D00480BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385A27E12E2D00480BE2 /* AppDelegate.swift */; };
 		34F8385D27E12E2D00480BE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */; };
 		34F8385F27E12E2D00480BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385E27E12E2D00480BE2 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chrome Syrup.ttf"; sourceTree = "<group>"; };
+		3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlDay.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F8385A27E12E2D00480BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				34F8386E27E1307800480BE2 /* README.md */,
+				3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */,
 				34F8385927E12E2D00480BE2 /* LoFi Radio */,
 				34F8385827E12E2D00480BE2 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */,
 				34F8386727E12E2F00480BE2 /* LaunchScreen.storyboard in Resources */,
 				34F8386427E12E2F00480BE2 /* Assets.xcassets in Resources */,
 				34F8386F27E1307800480BE2 /* README.md in Resources */,
