@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import youtube_ios_player_helper
+import MediaPlayer
 
 class ViewController: UIViewController, YTPlayerViewDelegate {
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         
         setupVideoPlayer()
         setUpPlayButton()
+        setupVolumeSlider()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
@@ -34,9 +36,9 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     
     let header: UILabel = {
         var label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        label.center = CGPoint(x: 210, y: 140)
+        label.center = CGPoint(x: 210, y: 160)
         label.textAlignment = .center
-        label.font = UIFont(name: "Chrome Syrup", size: 70)
+        label.font = UIFont(name: "Chrome Syrup", size: 80)
         label.textColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
         label.text = "Lofi Radio"
         return label
@@ -53,18 +55,19 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         playerLooper = AVPlayerLooper(player: player, templateItem: playerItem,
                                       timeRange: CMTimeRange(start: CMTime.zero, end: CMTimeMake(value: duration, timescale: 1)) )
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        playerLayer.frame = CGRect(x: 60, y: 220, width: 300, height: 300)
+        playerLayer.frame = CGRect(x: 60, y: 260, width: 300, height: 300)
         playerLayer.masksToBounds = true
         playerLayer.cornerRadius = 10
         view.layer.insertSublayer(playerLayer, at: 1)
-        
+        playerLayer.borderWidth = 3
+        playerLayer.borderColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0).cgColor
         player.play()
         player.isMuted = true
     }
     
     func setUpPlayButton() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
-        button.center = CGPoint(x: 210, y: 630)
+        button.center = CGPoint(x: 210, y: 670)
         button.titleLabel?.center = CGPoint(x: 0, y: 0)
         button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 40)
         isPlaying ? button.setTitle("Pause", for: .normal) : button.setTitle("Play", for: .normal)
@@ -96,9 +99,30 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         }
     }
     
+    func setupVolumeSlider() {
+        let slider = UISlider(frame: CGRect(x: 0, y: 0, width: 360, height: 20))
+        slider.center = (CGPoint(x: 210, y: 800))
+        slider.value = 0.5
+        slider.tintColor = .brown
+        slider.thumbTintColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+        slider.addTarget(self, action: #selector(self.sliderValueChanged(_:)), for: .valueChanged)
+        view.addSubview(slider)
+    }
+    
+    @objc func sliderValueChanged(_ sender: UISlider!) {
+        MPVolumeView.setVolume(sender.value)
+    }
     
         
+}
+
+extension MPVolumeView {
+    static func setVolume(_ volume: Float) {
+        let volumeView = MPVolumeView()
+        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            slider?.value = volume
+        }
     }
-
-
-
+}
