@@ -16,14 +16,17 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     private var playerItem: AVPlayerItem!
     private var playerLooper: AVPlayerLooper!
 
+    var playerView: YTPlayerView!
+    var isPlaying: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
         view.addSubview(header)
         
         setupVideoPlayer()
-        playPause()
-        let playerView = YTPlayerView()
+        setUpPlayButton()
+        playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
         view.addSubview(playerView)
@@ -59,26 +62,43 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         player.isMuted = true
     }
     
-    func playPause() {
+    func setUpPlayButton() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
         button.center = CGPoint(x: 210, y: 630)
         button.titleLabel?.center = CGPoint(x: 0, y: 0)
         button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 40)
-        button.setTitle("Play", for: .normal)
+        isPlaying ? button.setTitle("Pause", for: .normal) : button.setTitle("Play", for: .normal)
         button.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
         button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor
+        isPlaying ? (button.layer.borderColor = UIColor(red: 202/255, green: 49/255, blue: 39/255, alpha: 1).cgColor) : (button.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor)
         button.contentVerticalAlignment = .fill
         //button.contentHorizontalAlignment = .fill
         button.contentMode = .center
         button.imageView?.contentMode = .scaleAspectFit
         button.layer.cornerRadius = button.frame.size.width / 2
         button.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(playPause))
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        button.addGestureRecognizer(gesture)
         self.view.addSubview(button)
     }
     
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        playerView.playVideo()
+    @objc func playPause() {
+        if isPlaying == false {
+            playerView.playVideo()
+            isPlaying = true
+            setUpPlayButton()
+        } else {
+            playerView.pauseVideo()
+            isPlaying = false
+            setUpPlayButton()
+        }
+    }
+    
+    
+        
     }
 
-}
+
+
