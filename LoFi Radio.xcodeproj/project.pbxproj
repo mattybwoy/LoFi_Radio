@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */; };
 		34F8385B27E12E2D00480BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385A27E12E2D00480BE2 /* AppDelegate.swift */; };
 		34F8385D27E12E2D00480BE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */; };
 		34F8385F27E12E2D00480BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385E27E12E2D00480BE2 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chrome Syrup.ttf"; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F8385A27E12E2D00480BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				34F8385E27E12E2D00480BE2 /* ViewController.swift */,
 				34F8386027E12E2D00480BE2 /* Main.storyboard */,
 				34F8386327E12E2F00480BE2 /* Assets.xcassets */,
+				3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */,
 				34F8386527E12E2F00480BE2 /* LaunchScreen.storyboard */,
 				34F8386827E12E2F00480BE2 /* Info.plist */,
 			);
@@ -132,6 +135,7 @@
 				34F8386427E12E2F00480BE2 /* Assets.xcassets in Resources */,
 				34F8386F27E1307800480BE2 /* README.md in Resources */,
 				34F8386227E12E2D00480BE2 /* Main.storyboard in Resources */,
+				3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
