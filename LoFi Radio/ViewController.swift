@@ -28,10 +28,36 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         setupVideoPlayer()
         setUpPlayButton()
         setupVolumeSlider()
+        setUpAboutButton()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
         view.addSubview(playerView)
+    }
+    
+    func setUpAboutButton() {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+        button.center = CGPoint(x: 70, y: 70)
+        button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 25)
+        button.setTitle("About", for: .normal)
+        button.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0).cgColor
+        button.imageView?.contentMode = .scaleAspectFill
+        button.layer.cornerRadius = 15
+        button.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(showAboutScreen))
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        button.addGestureRecognizer(gesture)
+        self.view.addSubview(button)
+    }
+    
+    @objc func showAboutScreen() {
+        let vc = AboutViewController()
+        let presentationVC = vc.presentationController as? UISheetPresentationController
+        presentationVC!.detents = [.medium()]
+        self.present(vc, animated: true)
     }
     
     let header: UILabel = {
