@@ -27,8 +27,8 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         view.addSubview(mode)
         view.addSubview(aboutButton)
         view.addSubview(volumeSlider)
+        view.addSubview(playButton)
         setupVideoPlayer()
-        setUpPlayButton()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
@@ -83,10 +83,23 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         if (sender.isOn == true) {
             view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
             header.textColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+            aboutButton.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+            aboutButton.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
+            aboutButton.layer.borderColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0).cgColor
+            playerLayer.borderColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0).cgColor
+            playButton.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
+            playButton.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+            volumeSlider.tintColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
         } else {
             view.backgroundColor = UIColor(red: 30/255, green: 26/255, blue: 23/255, alpha: 1)
             header.textColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
-            
+            aboutButton.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
+            aboutButton.setTitleColor(UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1), for: .normal)
+            aboutButton.layer.borderColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0).cgColor
+            playerLayer.borderColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0).cgColor
+            playButton.setTitleColor(UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1), for: .normal)
+            playButton.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
+            volumeSlider.tintColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
         }
     }
     
@@ -111,37 +124,35 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         player.isMuted = true
     }
     
-    func setUpPlayButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
+    let playButton : UIButton = {
+        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
         button.center = CGPoint(x: 210, y: 670)
         button.titleLabel?.center = CGPoint(x: 0, y: 0)
         button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 40)
-        isPlaying ? button.setTitle("Pause", for: .normal) : button.setTitle("Play", for: .normal)
         button.setTitleColor(UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0), for: .normal)
         button.layer.borderWidth = 2
-        isPlaying ? (button.layer.borderColor = UIColor(red: 202/255, green: 49/255, blue: 39/255, alpha: 1).cgColor) : (button.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor)
         button.contentVerticalAlignment = .fill
-        //button.contentHorizontalAlignment = .fill
+        button.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor
+        button.setTitle("Play", for: .normal)
         button.contentMode = .center
         button.imageView?.contentMode = .scaleAspectFit
         button.layer.cornerRadius = button.frame.size.width / 2
         button.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(playPause))
-        gesture.numberOfTapsRequired = 1
-        gesture.numberOfTouchesRequired = 1
-        button.addGestureRecognizer(gesture)
-        self.view.addSubview(button)
-    }
+        button.addTarget(self, action: #selector(playPause), for: .touchUpInside)
+        return button
+    }()
     
     @objc func playPause() {
         if isPlaying == false {
             playerView.playVideo()
+            playButton.layer.borderColor = UIColor(red: 202/255, green: 49/255, blue: 39/255, alpha: 1).cgColor
+            playButton.setTitle("Pause", for: .normal)
             isPlaying = true
-            setUpPlayButton()
         } else {
             playerView.pauseVideo()
+            playButton.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor
+            playButton.setTitle("Play", for: .normal)
             isPlaying = false
-            setUpPlayButton()
         }
     }
     
@@ -149,7 +160,7 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         var slider = UISlider(frame: CGRect(x: 0, y: 0, width: 360, height: 20))
         slider.center = (CGPoint(x: 210, y: 800))
         slider.value = 0.5
-        slider.tintColor = .brown
+        slider.tintColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
         slider.thumbTintColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         return slider
