@@ -148,11 +148,17 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
             playerView.playVideo()
             playButton.layer.borderColor = UIColor(red: 202/255, green: 49/255, blue: 39/255, alpha: 1).cgColor
             playButton.setTitle("Pause", for: .normal)
+            UIView.animate(withDuration: 0.2) {
+                self.playerLayer.frame = CGRect(x: 50, y: 250, width: 320, height: 320)
+            }
             isPlaying = true
         } else {
             playerView.pauseVideo()
             playButton.layer.borderColor = UIColor(red: 5.0/255, green: 93.0/255, blue: 76/255, alpha: 1).cgColor
             playButton.setTitle("Play", for: .normal)
+            UIView.animate(withDuration: 0.2) {
+                self.playerLayer.frame = CGRect(x: 60, y: 260, width: 300, height: 300)
+            }
             isPlaying = false
         }
     }

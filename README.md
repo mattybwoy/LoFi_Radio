@@ -12,7 +12,8 @@ Create a Lofi radio app that allows users to chill out by playing music
 - YouTube Stream cocoapod added for Lofi music playback
 - Volume Control added
 - About screen added
-- Dark mode implemented 
+- Dark mode implemented
+- Animation added for loopiong video 
 
 ## Improvements
 - Custom UI Elements
