@@ -76,6 +76,7 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         toggle.onTintColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
         toggle.tintColor = UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0)
         toggle.thumbTintColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+        toggle.subviews[0].subviews[0].backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
         return toggle
     }()
     
