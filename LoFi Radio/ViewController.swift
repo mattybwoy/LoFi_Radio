@@ -16,7 +16,7 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     private var playerLayer: AVPlayerLayer!
     private var playerItem: AVPlayerItem!
     private var playerLooper: AVPlayerLooper!
-
+    
     var playerView: YTPlayerView!
     var isPlaying: Bool = false
     
@@ -24,19 +24,19 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
         view.addSubview(header)
-        
+        view.addSubview(mode)
+        view.addSubview(aboutButton)
+        view.addSubview(volumeSlider)
         setupVideoPlayer()
         setUpPlayButton()
-        setupVolumeSlider()
-        setUpAboutButton()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
         view.addSubview(playerView)
     }
     
-    func setUpAboutButton() {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
+    let aboutButton: UIButton = {
+        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 40))
         button.center = CGPoint(x: 70, y: 70)
         button.titleLabel!.font = UIFont(name: "Chrome Syrup", size: 25)
         button.setTitle("About", for: .normal)
@@ -46,18 +46,17 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         button.imageView?.contentMode = .scaleAspectFill
         button.layer.cornerRadius = 15
         button.backgroundColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(showAboutScreen))
-        gesture.numberOfTapsRequired = 1
-        gesture.numberOfTouchesRequired = 1
-        button.addGestureRecognizer(gesture)
-        self.view.addSubview(button)
-    }
+        button.addTarget(self, action: #selector(showAboutScreen), for: .touchUpInside)
+        return button
+    }()
     
     @objc func showAboutScreen() {
-        let vc = AboutViewController()
-        let presentationVC = vc.presentationController as? UISheetPresentationController
-        presentationVC!.detents = [.medium()]
-        self.present(vc, animated: true)
+            let vc = AboutViewController()
+            if let sheet = vc.presentationController as? UISheetPresentationController {
+                sheet.preferredCornerRadius = 25
+                sheet.detents = [.medium()]
+            }
+            self.present(vc, animated: true)
     }
     
     let header: UILabel = {
@@ -69,6 +68,27 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         label.text = "Lofi Radio"
         return label
     }()
+    
+    let mode: UISwitch = {
+        var toggle = UISwitch(frame: CGRect(x: 330, y: 55, width: 100, height: 100))
+        toggle.addTarget(self, action: #selector(switchMode), for: .valueChanged)
+        toggle.setOn(true, animated: false)
+        toggle.onTintColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)
+        toggle.tintColor = UIColor(red: 219/255, green: 188/255, blue: 131/255, alpha: 1.0)
+        toggle.thumbTintColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+        return toggle
+    }()
+    
+    @objc func switchMode(_ sender: UISwitch!) {
+        if (sender.isOn == true) {
+            view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
+            header.textColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
+        } else {
+            view.backgroundColor = UIColor(red: 30/255, green: 26/255, blue: 23/255, alpha: 1)
+            header.textColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)
+            
+        }
+    }
     
     func setupVideoPlayer() {
         let path = Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4")
@@ -125,15 +145,15 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         }
     }
     
-    func setupVolumeSlider() {
-        let slider = UISlider(frame: CGRect(x: 0, y: 0, width: 360, height: 20))
+    let volumeSlider: UISlider = {
+        var slider = UISlider(frame: CGRect(x: 0, y: 0, width: 360, height: 20))
         slider.center = (CGPoint(x: 210, y: 800))
         slider.value = 0.5
         slider.tintColor = .brown
         slider.thumbTintColor = UIColor(red: 25.0/255, green: 85.0/255, blue: 80.0/255, alpha: 1.0)
-        slider.addTarget(self, action: #selector(self.sliderValueChanged(_:)), for: .valueChanged)
-        view.addSubview(slider)
-    }
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        return slider
+    }()
     
     @objc func sliderValueChanged(_ sender: UISlider!) {
         MPVolumeView.setVolume(sender.value)
