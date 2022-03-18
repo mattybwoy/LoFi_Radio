@@ -9,6 +9,8 @@ import UIKit
 import AVFoundation
 import youtube_ios_player_helper
 import MediaPlayer
+import Solar
+import CoreLocation
 
 class ViewController: UIViewController, YTPlayerViewDelegate {
     
@@ -28,7 +30,8 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         view.addSubview(aboutButton)
         view.addSubview(volumeSlider)
         view.addSubview(playButton)
-        setupVideoPlayer()
+        findOutSunriseSunset()
+        //setupVideoPlayer()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
@@ -104,8 +107,22 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         }
     }
     
-    func setupVideoPlayer() {
-        let path = Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4")
+    func findOutSunriseSunset() {
+        let solar = Solar(coordinate: CLLocationCoordinate2D(latitude: 51.528308, longitude: -0.1340267))
+        guard let solar = solar else {
+            return
+        }
+        let sunrise = (Calendar.current.component(.hour, from: solar.sunrise!))
+        let sunset = (Calendar.current.component(.hour, from: solar.sunset!))
+        setupVideoPlayer(sunriseHour: sunrise, sunsetHour: sunset)
+    }
+    
+    func setupVideoPlayer(sunriseHour: Int, sunsetHour: Int) {
+        
+        let today = Date()
+        let currentHour = (Calendar.current.component(.hour, from: today))
+        
+        let path = currentHour > sunriseHour && currentHour < sunsetHour ? Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4") : Bundle.main.path(forResource: "LofiGirlNight", ofType: "mp4")
         let pathURL = URL(fileURLWithPath: path!)
         let duration = Int64( ( (Float64(CMTimeGetSeconds(AVAsset(url: pathURL).duration)) *  10.0) - 1) / 10.0 )
 

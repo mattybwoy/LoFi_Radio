@@ -7,5 +7,6 @@ target 'LoFi Radio' do
 
   # Pods for LoFi Radio
 pod 'youtube-ios-player-helper'
+pod 'Solar', '~> 2.2'
 
 end

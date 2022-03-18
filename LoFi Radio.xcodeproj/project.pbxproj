@@ -11,6 +11,8 @@
 		3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */; };
 		3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */; };
 		34EEA4E727E33E1F009E5C5F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */; };
+		34EEA4EA27E51958009E5C5F /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = 34EEA4E927E51958009E5C5F /* Solar */; };
+		34EEA4EC27E51CD5009E5C5F /* LofiGirlNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */; };
 		34F8385B27E12E2D00480BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385A27E12E2D00480BE2 /* AppDelegate.swift */; };
 		34F8385D27E12E2D00480BE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */; };
 		34F8385F27E12E2D00480BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8385E27E12E2D00480BE2 /* ViewController.swift */; };
@@ -25,6 +27,7 @@
 		3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chrome Syrup.ttf"; sourceTree = "<group>"; };
 		3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlDay.mp4; sourceTree = "<group>"; };
 		34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlNight.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F8385A27E12E2D00480BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F8385C27E12E2D00480BE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34EEA4EA27E51958009E5C5F /* Solar in Frameworks */,
 				1C7DE8BA674A92CB699716E3 /* Pods_LoFi_Radio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +67,7 @@
 			children = (
 				34F8386E27E1307800480BE2 /* README.md */,
 				3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */,
+				34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */,
 				34F8385927E12E2D00480BE2 /* LoFi Radio */,
 				34F8385827E12E2D00480BE2 /* Products */,
 				A4EAC35B7F14E20C2FBD9961 /* Pods */,
@@ -121,6 +126,9 @@
 			dependencies = (
 			);
 			name = "LoFi Radio";
+			packageProductDependencies = (
+				34EEA4E927E51958009E5C5F /* Solar */,
+			);
 			productName = "LoFi Radio";
 			productReference = 34F8385727E12E2D00480BE2 /* LoFi Radio.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 34F8384E27E12E2D00480BE2;
+			packageReferences = (
+				34EEA4E827E51958009E5C5F /* XCRemoteSwiftPackageReference "Solar" */,
+			);
 			productRefGroup = 34F8385827E12E2D00480BE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34EEA4EC27E51CD5009E5C5F /* LofiGirlNight.mp4 in Resources */,
 				3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */,
 				34F8386727E12E2F00480BE2 /* LaunchScreen.storyboard in Resources */,
 				34F8386427E12E2F00480BE2 /* Assets.xcassets in Resources */,
@@ -446,6 +458,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34EEA4E827E51958009E5C5F /* XCRemoteSwiftPackageReference "Solar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ceeK/Solar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34EEA4E927E51958009E5C5F /* Solar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34EEA4E827E51958009E5C5F /* XCRemoteSwiftPackageReference "Solar" */;
+			productName = Solar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34F8384F27E12E2D00480BE2 /* Project object */;
 }
