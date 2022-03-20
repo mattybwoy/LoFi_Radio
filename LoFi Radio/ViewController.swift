@@ -21,6 +21,15 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     
     var playerView: YTPlayerView!
     var isPlaying: Bool = false
+    var path: String?
+    
+    public func disconnectAVPlayer() {
+        playerView.pauseVideo()
+    }
+
+    public func reconnectAVPlayer() {
+        playerView.playVideo()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +40,6 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         view.addSubview(volumeSlider)
         view.addSubview(playButton)
         findOutSunriseSunset()
-        //setupVideoPlayer()
         playerView = YTPlayerView()
         playerView.delegate = self
         playerView.load(withVideoId: "5qap5aO4i9A")
@@ -114,18 +122,19 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
         }
         let sunrise = (Calendar.current.component(.hour, from: solar.sunrise!))
         let sunset = (Calendar.current.component(.hour, from: solar.sunset!))
-        setupVideoPlayer(sunriseHour: sunrise, sunsetHour: sunset)
+        setTime(sunriseHour: sunrise, sunsetHour: sunset)
     }
     
-    func setupVideoPlayer(sunriseHour: Int, sunsetHour: Int) {
-        
+    func setTime(sunriseHour: Int, sunsetHour: Int) {
         let today = Date()
         let currentHour = (Calendar.current.component(.hour, from: today))
-        
-        let path = currentHour > sunriseHour && currentHour < sunsetHour ? Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4") : Bundle.main.path(forResource: "LofiGirlNight", ofType: "mp4")
-        let pathURL = URL(fileURLWithPath: path!)
+        path = currentHour > sunriseHour && currentHour < sunsetHour ? Bundle.main.path(forResource: "LofiGirlDay", ofType: "mp4") : Bundle.main.path(forResource: "LofiGirlNight", ofType: "mp4")
+        setupVideoPlayer(time: path)
+    }
+    
+    func setupVideoPlayer(time: String?) {
+        let pathURL = URL(fileURLWithPath: time!)
         let duration = Int64( ( (Float64(CMTimeGetSeconds(AVAsset(url: pathURL).duration)) *  10.0) - 1) / 10.0 )
-
         player = AVQueuePlayer()
         playerLayer = AVPlayerLayer(player: player)
         playerItem = AVPlayerItem(url: pathURL)
@@ -178,6 +187,8 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
             }
             isPlaying = false
         }
+        player.play()
+        player.isMuted = true
     }
     
     let volumeSlider: UISlider = {
