@@ -13,11 +13,13 @@ Create a Lofi radio app that allows users to chill out by playing music
 - Volume Control added
 - About screen added
 - Dark mode implemented
-- Animation added for loopiong video
+- Animation added for looping video
 - Video displayed on homescreen now dependant on day or night
 
 ## Improvements
 - Custom UI Elements
+- Background music playback
+- Looping Video upon Playback
 
 ## Testing
 
@@ -29,7 +31,7 @@ Create a Lofi radio app that allows users to chill out by playing music
 ## Screenshots
 
 ## Tech Stack
-Swift
+Swift, UIKit
 
 ## Collaborators
 @mattybwoy
