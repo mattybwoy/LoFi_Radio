@@ -18,10 +18,9 @@ Create a Lofi radio app that allows users to chill out by playing music
 
 ## Improvements
 - Custom UI Elements
-- Background music playback
-- Looping Video upon Playback
 
 ## Testing
+2/2 UI Tests passing
 
 ## Installation
 

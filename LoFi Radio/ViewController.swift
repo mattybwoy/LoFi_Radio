@@ -23,14 +23,6 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     var isPlaying: Bool = false
     var path: String?
     
-    public func disconnectAVPlayer() {
-        playerView.pauseVideo()
-    }
-
-    public func reconnectAVPlayer() {
-        playerView.playVideo()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 219.0/255, green: 188.0/255, blue: 131.0/255, alpha: 1.0)

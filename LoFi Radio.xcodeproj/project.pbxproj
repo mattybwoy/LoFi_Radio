@@ -10,6 +10,8 @@
 		1C7DE8BA674A92CB699716E3 /* Pods_LoFi_Radio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D659BB5FADAFF631BDA6E5 /* Pods_LoFi_Radio.framework */; };
 		3461FFC927E1F53900B5CBED /* Chrome Syrup.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */; };
 		3461FFCB27E1FC1600B5CBED /* LofiGirlDay.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */; };
+		3463510927EA44CF00EEF04C /* LoFi_RadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463510827EA44CF00EEF04C /* LoFi_RadioUITests.swift */; };
+		3463510B27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463510A27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift */; };
 		34EEA4E727E33E1F009E5C5F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */; };
 		34EEA4EA27E51958009E5C5F /* Solar in Frameworks */ = {isa = PBXBuildFile; productRef = 34EEA4E927E51958009E5C5F /* Solar */; };
 		34EEA4EC27E51CD5009E5C5F /* LofiGirlNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */; };
@@ -22,10 +24,23 @@
 		34F8386F27E1307800480BE2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 34F8386E27E1307800480BE2 /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3463510C27EA44CF00EEF04C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34F8384F27E12E2D00480BE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34F8385627E12E2D00480BE2;
+			remoteInfo = "LoFi Radio";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		24D659BB5FADAFF631BDA6E5 /* Pods_LoFi_Radio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoFi_Radio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3461FFC827E1F53900B5CBED /* Chrome Syrup.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chrome Syrup.ttf"; sourceTree = "<group>"; };
 		3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlDay.mp4; sourceTree = "<group>"; };
+		3463510627EA44CF00EEF04C /* LoFi RadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoFi RadioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3463510827EA44CF00EEF04C /* LoFi_RadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFi_RadioUITests.swift; sourceTree = "<group>"; };
+		3463510A27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFi_RadioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlNight.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3463510327EA44CF00EEF04C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34F8385427E12E2D00480BE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +84,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3463510727EA44CF00EEF04C /* LoFi RadioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3463510827EA44CF00EEF04C /* LoFi_RadioUITests.swift */,
+				3463510A27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift */,
+			);
+			path = "LoFi RadioUITests";
+			sourceTree = "<group>";
+		};
 		34F8384E27E12E2D00480BE2 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +100,7 @@
 				3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */,
 				34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */,
 				34F8385927E12E2D00480BE2 /* LoFi Radio */,
+				3463510727EA44CF00EEF04C /* LoFi RadioUITests */,
 				34F8385827E12E2D00480BE2 /* Products */,
 				A4EAC35B7F14E20C2FBD9961 /* Pods */,
 				0CA3470C7E68E982C326B6E4 /* Frameworks */,
@@ -79,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				34F8385727E12E2D00480BE2 /* LoFi Radio.app */,
+				3463510627EA44CF00EEF04C /* LoFi RadioUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +144,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3463510527EA44CF00EEF04C /* LoFi RadioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3463511027EA44CF00EEF04C /* Build configuration list for PBXNativeTarget "LoFi RadioUITests" */;
+			buildPhases = (
+				3463510227EA44CF00EEF04C /* Sources */,
+				3463510327EA44CF00EEF04C /* Frameworks */,
+				3463510427EA44CF00EEF04C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3463510D27EA44CF00EEF04C /* PBXTargetDependency */,
+			);
+			name = "LoFi RadioUITests";
+			productName = "LoFi RadioUITests";
+			productReference = 3463510627EA44CF00EEF04C /* LoFi RadioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		34F8385627E12E2D00480BE2 /* LoFi Radio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34F8386B27E12E2F00480BE2 /* Build configuration list for PBXNativeTarget "LoFi Radio" */;
@@ -143,6 +194,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					3463510527EA44CF00EEF04C = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 34F8385627E12E2D00480BE2;
+					};
 					34F8385627E12E2D00480BE2 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -165,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				34F8385627E12E2D00480BE2 /* LoFi Radio */,
+				3463510527EA44CF00EEF04C /* LoFi RadioUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3463510427EA44CF00EEF04C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34F8385527E12E2D00480BE2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +292,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3463510227EA44CF00EEF04C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3463510B27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift in Sources */,
+				3463510927EA44CF00EEF04C /* LoFi_RadioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34F8385327E12E2D00480BE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +313,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3463510D27EA44CF00EEF04C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34F8385627E12E2D00480BE2 /* LoFi Radio */;
+			targetProxy = 3463510C27EA44CF00EEF04C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34F8386027E12E2D00480BE2 /* Main.storyboard */ = {
@@ -262,6 +342,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3463510E27EA44CF00EEF04C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6478Y3WC5Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewlock.LoFi-RadioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "LoFi Radio";
+			};
+			name = Debug;
+		};
+		3463510F27EA44CF00EEF04C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6478Y3WC5Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.matthewlock.LoFi-RadioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "LoFi Radio";
+			};
+			name = Release;
+		};
 		34F8386927E12E2F00480BE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +553,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3463511027EA44CF00EEF04C /* Build configuration list for PBXNativeTarget "LoFi RadioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3463510E27EA44CF00EEF04C /* Debug */,
+				3463510F27EA44CF00EEF04C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34F8385227E12E2D00480BE2 /* Build configuration list for PBXProject "LoFi Radio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
