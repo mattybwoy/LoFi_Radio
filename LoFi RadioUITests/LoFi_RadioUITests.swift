@@ -24,16 +24,31 @@ class LoFi_RadioUITests: XCTestCase {
 
     func testViewController_UponLoading_DisplaysHeader() {
         let lofiRadioStaticText = app.staticTexts["Lofi Radio"]
+        
         XCTAssertNotNil(lofiRadioStaticText)
         XCTAssertEqual(lofiRadioStaticText.label, "Lofi Radio")
     }
     
     func testViewController_UponLoading_DisplaysVideo() {
         let video = XCUIApplication().windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        
         XCTAssertNotNil(video)
     }
     
+    func testViewController_UponLoading_DisplaysPlayButton() {
+        let playButton = app.staticTexts["Play"]
+        
+        XCTAssertNotNil(playButton)
+        XCTAssertEqual(playButton.label, "Play")
+    }
     
+    func testViewController_UponLoading_PauseButton() {
+        app.staticTexts["Play"].tap()
+        let pauseButton = app.staticTexts["Pause"]
+        
+        XCTAssertNotNil(pauseButton)
+        XCTAssertEqual(pauseButton.label, "Pause")
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
