@@ -74,6 +74,7 @@ class ViewController: UIViewController, YTPlayerViewDelegate {
     
     let mode: UISwitch = {
         var toggle = UISwitch(frame: CGRect(x: 330, y: 55, width: 100, height: 100))
+        toggle.isAccessibilityElement = true
         toggle.addTarget(self, action: #selector(switchMode), for: .valueChanged)
         toggle.setOn(true, animated: false)
         toggle.onTintColor = UIColor(red: 75.0/255, green: 35/255, blue: 27.0/255, alpha: 1)

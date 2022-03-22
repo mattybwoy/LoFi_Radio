@@ -42,13 +42,34 @@ class LoFi_RadioUITests: XCTestCase {
         XCTAssertEqual(playButton.label, "Play")
     }
     
-    func testViewController_UponLoading_PauseButton() {
+    func testViewController_UponLoading_AfterTappingPlayDisplaysPauseButton() {
         app.staticTexts["Play"].tap()
         let pauseButton = app.staticTexts["Pause"]
         
         XCTAssertNotNil(pauseButton)
         XCTAssertEqual(pauseButton.label, "Pause")
     }
+    
+    func testViewController_UponLoading_DisplaysVolumeSlider() {
+        let slider = app.sliders["50%"]
+        
+        XCTAssertNotNil(slider)
+        XCTAssertEqual(slider.value as! String, "50%")
+    }
+    
+    func testViewController_UponLoading_DisplaysAboutButton() {
+        let aboutButton = app/*@START_MENU_TOKEN@*/.staticTexts["About"]/*[[".buttons[\"About\"].staticTexts[\"About\"]",".staticTexts[\"About\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        
+        XCTAssertEqual(aboutButton.label, "About")
+    }
+    
+    func testViewController_UponLoadingAboutScreen_DisplaysAboutInformation() {
+        app/*@START_MENU_TOKEN@*/.staticTexts["About"]/*[[".buttons[\"About\"].staticTexts[\"About\"]",".staticTexts[\"About\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let aboutScreenText = app.staticTexts["All images and music courtesy of Lofi Girl & Lofi Records"]
+
+        XCTAssertEqual(aboutScreenText.label, "All images and music courtesy of Lofi Girl & Lofi Records")
+    }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
