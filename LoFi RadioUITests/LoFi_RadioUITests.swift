@@ -57,6 +57,12 @@ class LoFi_RadioUITests: XCTestCase {
         XCTAssertEqual(slider.value as! String, "50%")
     }
     
+    func testViewController_UponLoading_DisplaysToggle() {
+        let darkModeSwitch: Void = app.switches["1"].children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.tap()
+
+        XCTAssertNotNil(darkModeSwitch)
+    }
+    
     func testViewController_UponLoading_DisplaysAboutButton() {
         let aboutButton = app/*@START_MENU_TOKEN@*/.staticTexts["About"]/*[[".buttons[\"About\"].staticTexts[\"About\"]",".staticTexts[\"About\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         

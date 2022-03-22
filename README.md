@@ -20,7 +20,7 @@ Create a Lofi radio app that allows users to chill out by playing music
 - Custom UI Elements
 
 ## Testing
-2/2 UI Tests passing
+8/8 UI Tests passing
 
 ## Installation
 
