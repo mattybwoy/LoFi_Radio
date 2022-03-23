@@ -41,6 +41,8 @@
 		3463510627EA44CF00EEF04C /* LoFi RadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoFi RadioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3463510827EA44CF00EEF04C /* LoFi_RadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFi_RadioUITests.swift; sourceTree = "<group>"; };
 		3463510A27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFi_RadioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3463511227EB3EA000EEF04C /* LofiRadioImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LofiRadioImage1.png; sourceTree = "<group>"; };
+		3463511327EB3EA000EEF04C /* LofiRadioImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LofiRadioImage2.png; sourceTree = "<group>"; };
 		34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlNight.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +95,19 @@
 			path = "LoFi RadioUITests";
 			sourceTree = "<group>";
 		};
+		3463511127EB3E2300EEF04C /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				3463511227EB3EA000EEF04C /* LofiRadioImage1.png */,
+				3463511327EB3EA000EEF04C /* LofiRadioImage2.png */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		34F8384E27E12E2D00480BE2 = {
 			isa = PBXGroup;
 			children = (
+				3463511127EB3E2300EEF04C /* Documentation */,
 				34F8386E27E1307800480BE2 /* README.md */,
 				3461FFCA27E1FC1600B5CBED /* LofiGirlDay.mp4 */,
 				34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */,

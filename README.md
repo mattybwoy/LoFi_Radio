@@ -28,6 +28,8 @@ Create a Lofi radio app that allows users to chill out by playing music
 2. Install cocoapods
 
 ## Screenshots
+![LightMode](/Documentation/LofiRadioImage1.png)
+![DarkMode](/Documentation/LofiRadioImage2.png)
 
 ## Tech Stack
 Swift, UIKit
