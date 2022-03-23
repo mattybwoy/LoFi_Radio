@@ -31,6 +31,9 @@ Create a Lofi radio app that allows users to chill out by playing music
 ![LightMode](/Documentation/LofiRadioImage1.png)
 ![DarkMode](/Documentation/LofiRadioImage2.png)
 
+## Demo
+![Demo](/Documentation/LofiRadioDemo.gif)
+
 ## Tech Stack
 Swift, UIKit
 

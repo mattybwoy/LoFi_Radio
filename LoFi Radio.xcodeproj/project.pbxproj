@@ -43,6 +43,7 @@
 		3463510A27EA44CF00EEF04C /* LoFi_RadioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFi_RadioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3463511227EB3EA000EEF04C /* LofiRadioImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LofiRadioImage1.png; sourceTree = "<group>"; };
 		3463511327EB3EA000EEF04C /* LofiRadioImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LofiRadioImage2.png; sourceTree = "<group>"; };
+		3463511427EB3F7900EEF04C /* LofiRadioDemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LofiRadioDemo.gif; sourceTree = "<group>"; };
 		34EEA4E627E33E1F009E5C5F /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		34EEA4EB27E51CD5009E5C5F /* LofiGirlNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LofiGirlNight.mp4; sourceTree = "<group>"; };
 		34F8385727E12E2D00480BE2 /* LoFi Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoFi Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +101,7 @@
 			children = (
 				3463511227EB3EA000EEF04C /* LofiRadioImage1.png */,
 				3463511327EB3EA000EEF04C /* LofiRadioImage2.png */,
+				3463511427EB3F7900EEF04C /* LofiRadioDemo.gif */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
