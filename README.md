@@ -5,7 +5,7 @@ LoFi Radio 📻
 </h1>
 
 ## Objective
-Create a Lofi radio app that allows users to chill out by playing music
+Create a Lofi radio app that allows users to chill out by playing music. App is connected to live YouTube Stream of Lofi Girl (https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl)
 
 ## Progress
 - Looping video added for main image
